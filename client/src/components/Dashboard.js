@@ -64,12 +64,10 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
     }
     setCargando(true);
     const data = await Peticion(Global.url + "/tickets/editar/" + ticket._id, "PUT", objetoTicket, token);
+    setCargando(false);
     if(data.status === "success"){
-        tituloInput.current.value="";
-        descripcionInput.current.value="";
         await ObtenerDatos();
         navegar("/control/home/" + proyecto._id)
-        setCargando(false);
     }else{
         // datos = []
     }
@@ -103,6 +101,10 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
     }else{
         // datos = []
     }
+  }
+
+  const handleEditarModal = (t) => {
+    setTicket(t)
   }
 
   return (
@@ -140,7 +142,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
                                         <div className="contenido-ticket d-flex align-items-center gap-5">
                                             <span> { ticket.titulo } </span>
                                             <div className="acciones">
-                                                <img src="../../iconos/editar.png" alt="editar" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>setTicket(ticket)}/>
+                                                <img src="../../iconos/editar.png" alt="editar" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => handleEditarModal(ticket)}/>
                                                 <img src="../../iconos/eliminar.png" alt="cancelar" data-bs-toggle="modal" data-bs-target="#cancelarTicketModal" onClick={()=>setTicket(ticket)}/>
                                             </div>
                                         </div>

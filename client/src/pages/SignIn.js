@@ -13,12 +13,12 @@ const SignIn = () => {
 
   const send = async (e) => {
       e.preventDefault();
-      const data = await Peticion(Global.url + "/user/login", "POST", formulario);
       setCargando(true);
+      const data = await Peticion(Global.url + "/user/login", "POST", formulario);
+      setCargando(false);
       if(data.status === "success"){
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", data.token);
-          setCargando(false);
           navegar('/control');
       }else{
         setMensajeError("Datos incorrectos")
