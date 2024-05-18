@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.signup, .signin{
+  height: 100vh;
+}
+
+.dashboard .accordion-collapse input{
+  border: none;
+}
+
+.dashboard .accordion-collapse img{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.dashboard .accordion-collapse .contenido-ticket{
+  width: 70%;
+}
+
+.dashboard .accordion-collapse .nuevo_ticket{
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.dashboard .nueva_historia_usuario{
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+
+.menu ul, .menu-proyectos{
+  list-style: none;
+}
+
+.menu ul li a, .menu-proyectos li a{
+  text-decoration: none;
+}
+
+.menu ul li a:hover, .menu-proyectos li a:hover{
+  text-decoration: underline;
+}
+
+.cerrar-sesion{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
