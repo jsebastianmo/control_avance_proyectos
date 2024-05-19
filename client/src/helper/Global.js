@@ -1,3 +1,3 @@
 export const Global = {
-    url: "https://controlavanceproyectos-jhon-sebastians-projects.vercel.app/api"
+    url: "https://controlavanceproyectos-6foe3bh9b-jhon-sebastians-projects.vercel.app"
 }
