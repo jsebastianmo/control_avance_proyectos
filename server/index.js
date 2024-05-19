@@ -15,7 +15,13 @@ app.set('PORT', process.env.PORT || 3001);
 
 conection();
 
-app.use(cors());
+// Configurar CORS para permitir solicitudes desde el dominio de tu frontend
+const corsOptions = {
+  origin: 'https://main--controlproyectos.netlify.app', // Reemplaza con tu dominio
+  optionsSuccessStatus: 200 // Para soportar algunos navegadores antiguos
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
