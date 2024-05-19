@@ -5,6 +5,7 @@ const Peticion = async (url, metodo="GET", datos="", token="") => {
     if(metodo === "GET" || metodo === "DELETE"){
         options = {
             method: metodo,
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json',
                 'authorization': token
@@ -15,6 +16,7 @@ const Peticion = async (url, metodo="GET", datos="", token="") => {
     if(metodo === "POST" || metodo === "PUT"){
         options = {
             method: metodo,
+            mode: 'no-cors',
             body: JSON.stringify(datos),
             headers: {
                 'Content-Type': 'application/json',
