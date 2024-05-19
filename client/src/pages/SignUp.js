@@ -30,7 +30,7 @@ const SignUp = () => {
                 setMensajeContraseña("Las contraseñas no coinciden");
             }else{
                 const data = await Peticion(Global.url + "/user/register", "POST", formulario);
-                if(data.status == "success"){
+                if(data.status === "success"){
                     navegar("/signin");
                     setMensajeContraseña("");
                     setMensajeError("");

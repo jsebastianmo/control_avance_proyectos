@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useProyecto from "../hooks/useProyecto";
 import Peticion from "../helper/Peticion";
 import { Global } from "../helper/Global";
@@ -20,15 +20,10 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
   const [cargando, setCargando] = useState(false);
   const navegar = useNavigate();
 
-  useEffect(() => {
-    setProyecto(obtenerProyecto(idProyecto));
-  }, [idProyecto])
-
-  useEffect(() => {
-    setProyecto(obtenerProyecto(idProyecto));
-  }, [datos])
+  setProyecto(obtenerProyecto(idProyecto));
 
   const token = localStorage.getItem('token');
+  setUser(JSON.parse(localStorage.getItem('user')));
 
   const handleIdHistoriaTicket = (id) => {
     setHistoriaId(id);
@@ -147,8 +142,8 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
                                             </div>
                                         </div>
                                         <div className="d-flex gap-1">
-                                            <span className="badge bg-info">{ ticket.encargado =="" ? 'Sin encargador' : ticket.encargado }</span>
-                                            <span className={ticket.estado == 'En curso' ? 'badge bg-primary' : ticket.estado == 'Finalizada' ? 'badge bg-success' : 'badge bg-secondary'}>{ ticket.estado }</span>
+                                            <span className="badge bg-info">{ ticket.encargado === "" ? 'Sin encargador' : ticket.encargado }</span>
+                                            <span className={ticket.estado === 'En curso' ? 'badge bg-primary' : ticket.estado === 'Finalizada' ? 'badge bg-success' : 'badge bg-secondary'}>{ ticket.estado }</span>
                                         </div>
                                     </li>
                                 ))

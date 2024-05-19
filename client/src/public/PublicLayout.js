@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 const PublicLayout = () => {
-    const [authToken, setAuthToken] = useState(localStorage.getItem('token'));
+    const [authToken] = useState(localStorage.getItem('token'));
 
     return(
         <>
             {
-                authToken === null || authToken === undefined || authToken == "" ? 
+                authToken === null || authToken === undefined || authToken === "" ? 
                 (
                     <>
                         <Outlet />

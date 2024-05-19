@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 const PrivateLayout = () => {
-    const [authToken, setAuthToken] = useState(localStorage.getItem('token'));
+    const [authToken] = useState(localStorage.getItem('token'));
     const navegar = useNavigate();
 
     const handleCerrar = () => {
@@ -13,7 +13,7 @@ const PrivateLayout = () => {
     return(
         <>
             {
-                !(authToken === null || authToken === undefined || authToken == "") ? 
+                !(authToken === null || authToken === undefined || authToken === "") ? 
                 (
                     <>
                         <img className="cerrar-sesion" src="../../iconos/cerrar.png" alt="cerrar" data-bs-toggle="modal" data-bs-target="#cerrarTicketModal"/>

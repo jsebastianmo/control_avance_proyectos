@@ -1,7 +1,7 @@
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import Dashboard from "../components/Dashboard";
 import Menu from "../components/Menu";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Peticion from "../helper/Peticion";
 import { Global } from "../helper/Global";
 
@@ -9,11 +9,6 @@ const Home = () => {
 
   const [datos, setDatos] = useState([]);
   const params = useParams();
-  const navegar = useNavigate();
-
-  useEffect(() => {
-    ObtenerDatos();
-  }, [])
 
   const ObtenerDatos = async () => {
     try {
@@ -24,16 +19,18 @@ const Home = () => {
       if(data.status === "success"){
         setDatos(data.datos)
       }else{
-          datos = []
+          setDatos([])
       }
     } catch (error) {
     }
   }
 
+  ObtenerDatos();
+
   return (
     <section className="container">
       {
-        params.id == "" || params.id === undefined ? 
+        params.id === "" || params.id === undefined ? 
         (
           <>
             <h1 className="fs-4 text-center mt-5 mb-5"> Proyectos activos </h1>

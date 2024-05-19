@@ -4,9 +4,10 @@ const useProyecto = (datos) => {
     const obtenerProyecto = (idProyecto) => {
         let proyectoObtenido = {};
         datos.map(proyecto => {
-            if(proyecto._id == idProyecto){
+            if(proyecto._id === idProyecto){
                 proyectoObtenido = proyecto;
-            }
+              }
+            return []
         })
         return proyectoObtenido;
     }
