@@ -22,7 +22,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
 
   useEffect(() => {
       setProyecto(obtenerProyecto(idProyecto));
-  }, [idProyecto])
+  }, [obtenerProyecto])
 
   const token = localStorage.getItem('token');
 //   setUser(JSON.parse(localStorage.getItem('user')));
