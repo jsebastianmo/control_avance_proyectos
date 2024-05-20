@@ -27,7 +27,7 @@ const Home = () => {
 
   useEffect(() => {
     ObtenerDatos();
-  }, [datos])
+  }, [])
   
 
   return (
