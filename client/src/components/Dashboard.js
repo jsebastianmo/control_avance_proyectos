@@ -160,7 +160,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
         }
       </div>
       <div className="form-floating mt-5">
-        <input type="text" className="form-control nueva_historia_usuario" id="floatinghistoria" placeholder="Nueva historia de usuario" onChange={(e) => setHistoriaNueva(e.target.value)} onBlur={handleNuevoTicket}/>
+        <input type="text" className="form-control nueva_historia_usuario" id="floatinghistoria" placeholder="Nueva historia de usuario" onChange={(e) => setHistoriaNueva(e.target.value)} onBlur={()=>handleNuevoTicket()}/>
         <label htmlFor="floatinghistoria">Nueva Historia de Usuario...</label>
       </div>
             </>
@@ -191,7 +191,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={handleEditar}>Editar</button>
+                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={()=>handleEditar()}>Editar</button>
             </div>
             </div>
         </div>
@@ -240,7 +240,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={handleCrear}>Crear</button>
+                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={()=>handleCrear()}>Crear</button>
             </div>
             </div>
         </div>
