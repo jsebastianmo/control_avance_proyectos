@@ -20,9 +20,13 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
   const [cargando, setCargando] = useState(false);
   const navegar = useNavigate();
 
+  const obtenerIProyecto = () => {
+    setProyecto(obtenerProyecto(idProyecto));
+  }
+
   useEffect(() => {
-      setProyecto(obtenerProyecto(idProyecto));
-  }, [obtenerProyecto])
+    obtenerIProyecto();
+  }, [])
 
   const token = localStorage.getItem('token');
 //   setUser(JSON.parse(localStorage.getItem('user')));
