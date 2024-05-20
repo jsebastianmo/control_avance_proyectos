@@ -1,7 +1,7 @@
 import { NavLink, useParams } from "react-router-dom";
 import Dashboard from "../components/Dashboard";
 import Menu from "../components/Menu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Peticion from "../helper/Peticion";
 import { Global } from "../helper/Global";
 
@@ -25,7 +25,10 @@ const Home = () => {
     }
   }
 
-  ObtenerDatos();
+  useEffect(() => {
+    ObtenerDatos();
+  }, [datos])
+  
 
   return (
     <section className="container">
