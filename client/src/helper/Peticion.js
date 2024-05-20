@@ -28,6 +28,7 @@ const Peticion = async (url, metodo="GET", datos="", token="") => {
 
     const response = await fetch(url, options);
     const data = await response.json();
+    console.log(data);
     return data;
 }
 
