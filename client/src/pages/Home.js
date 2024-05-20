@@ -26,8 +26,14 @@ const Home = () => {
   }
 
   useEffect(() => {
+    let paramId = "";
+    try {
+      paramId = params.id;
+    } catch (error) {
+      paramId = "";
+    }
     ObtenerDatos();
-  }, [])
+  }, [paramId])
   
 
   return (

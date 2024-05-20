@@ -10,7 +10,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
   const { obtenerProyecto } = useProyecto(datos);
   const [ proyecto ] = useState(obtenerProyecto(idProyecto));
   const [ ticket, setTicket ] = useState({});
-  const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('user')));
+  const [ user ] = useState(JSON.parse(localStorage.getItem('user')));
   const [ historiaNueva, setHistoriaNueva ] = useState("");
   const [ historiaId, setHistoriaId ] = useState("");
   const tituloInput = useRef();
@@ -24,8 +24,8 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
 //       setProyecto(obtenerProyecto(idProyecto));
 //   }, [idProyecto])
 
-  const token = localStorage.getItem('token');
-  setUser(JSON.parse(localStorage.getItem('user')));
+//   const token = localStorage.getItem('token');
+//   setUser(JSON.parse(localStorage.getItem('user')));
 
   const handleIdHistoriaTicket = (id) => {
     setHistoriaId(id);
