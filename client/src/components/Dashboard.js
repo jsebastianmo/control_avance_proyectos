@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useProyecto from "../hooks/useProyecto";
 import Peticion from "../helper/Peticion";
 import { Global } from "../helper/Global";
@@ -20,7 +20,9 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
   const [cargando, setCargando] = useState(false);
   const navegar = useNavigate();
 
-  setProyecto(obtenerProyecto(idProyecto));
+  useEffect(() => {
+      setProyecto(obtenerProyecto(idProyecto));
+  }, [])
 
   const token = localStorage.getItem('token');
   setUser(JSON.parse(localStorage.getItem('user')));
