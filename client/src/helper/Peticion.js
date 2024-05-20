@@ -6,10 +6,10 @@ const Peticion = async (url, metodo="GET", datos="", token="") => {
         options = {
             method: metodo,
             mode: 'no-cors',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            //     'authorization': token
-            // }
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': token
+            }
         }
     }
 
