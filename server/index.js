@@ -16,7 +16,7 @@ app.set('PORT', process.env.PORT || 3001);
 conection();
 
 app.use(cors({
-  origin: 'https://main--controlproyectos.netlify.app',
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
