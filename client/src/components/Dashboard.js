@@ -24,7 +24,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
 //       setProyecto(obtenerProyecto(idProyecto));
 //   }, [idProyecto])
 
-//   const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 //   setUser(JSON.parse(localStorage.getItem('user')));
 
   const handleIdHistoriaTicket = (id) => {
