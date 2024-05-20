@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useProyecto from "../hooks/useProyecto";
 import Peticion from "../helper/Peticion";
 import { Global } from "../helper/Global";
@@ -8,7 +8,7 @@ const Dashboard = ({idProyecto, datos, ObtenerDatos}) => {
     
 
   const { obtenerProyecto } = useProyecto(datos);
-  const [ proyecto, setProyecto ] = useState(obtenerProyecto(idProyecto));
+  const [ proyecto ] = useState(obtenerProyecto(idProyecto));
   const [ ticket, setTicket ] = useState({});
   const [ user, setUser ] = useState(JSON.parse(localStorage.getItem('user')));
   const [ historiaNueva, setHistoriaNueva ] = useState("");
